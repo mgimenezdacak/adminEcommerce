@@ -1,0 +1,42 @@
+﻿<Window x:Class="EcommerceUaa.w_Cliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcommerceUaa"
+        mc:Ignorable="d"
+        Title="Cliente" Height="559.25" Width="717.93" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="dgvClientes" HorizontalAlignment="Left" Height="224" Margin="33,62,0,0" VerticalAlignment="Top" Width="642"/>
+        <Label Content="Clientes"  Width="103" FontSize="18" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="R.U.C.:" HorizontalAlignment="Left" Margin="33,338,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="81,338,0,0" TextWrapping="Wrap" Name="txtRuc" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="33,379,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="112,382,0,0" TextWrapping="Wrap" x:Name="txtRazonSocial" VerticalAlignment="Top" Width="285"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="219,338,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="277,338,0,0" TextWrapping="Wrap" x:Name="txtTelefono" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="23" Margin="81,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.31"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="33,416,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo de cliente:" HorizontalAlignment="Left" Margin="415,336,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbTipoCliente" HorizontalAlignment="Left" Margin="511,336,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Ciudad:" HorizontalAlignment="Left" Margin="415,377,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbCiudad" HorizontalAlignment="Left" Margin="511,377,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="299,416,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="366,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="191,300,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="303,300,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="424,300,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="499,462,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="600,462,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
