@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcommerceUaa"
         mc:Ignorable="d"
-        Title="Cliente" Height="559.25" Width="717.93" ResizeMode="NoResize">
+        Title="Cliente" Height="559.25" Width="717.93" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dgvClientes" HorizontalAlignment="Left" Height="224" Margin="33,62,0,0" VerticalAlignment="Top" Width="642"/>
+        <DataGrid x:Name="dgvClientes" HorizontalAlignment="Left" Height="224" Margin="33,62,0,0" VerticalAlignment="Top" Width="642" Loaded="dgvClientes_Loaded" SelectionChanged="dgvClientes_SelectionChanged" />
         <Label Content="Clientes"  Width="103" FontSize="18" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="R.U.C.:" HorizontalAlignment="Left" Margin="33,338,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="81,338,0,0" TextWrapping="Wrap" Name="txtRuc" VerticalAlignment="Top" Width="120"/>
@@ -32,11 +32,11 @@
         <ComboBox x:Name="cmbCiudad" HorizontalAlignment="Left" Margin="511,377,0,0" VerticalAlignment="Top" Width="125"/>
         <Label Content="Dirección:" HorizontalAlignment="Left" Margin="299,416,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="366,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270"/>
-        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="191,300,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="303,300,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="424,300,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="191,300,0,0" VerticalAlignment="Top" Width="75" Click="btnEliminar_Click"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="303,300,0,0" VerticalAlignment="Top" Width="75" Click="btnModificar_Click"/>
+        <Button x:Name="btnAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="424,300,0,0" VerticalAlignment="Top" Width="75" Click="btnAgregar_Click"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="499,462,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="600,462,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="600,462,0,0" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click"/>
 
     </Grid>
 </Window>
