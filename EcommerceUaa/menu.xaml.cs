@@ -72,5 +72,11 @@ namespace EcommerceUaa
             w_Cliente frm = new w_Cliente();
             frm.ShowDialog();
         }
+
+        private void TipoProducto_Selected(object sender, MouseButtonEventArgs e)
+        {
+            w_TipoProducto frm = new w_TipoProducto();
+            frm.ShowDialog();
+        }
     }
 }

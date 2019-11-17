@@ -114,6 +114,8 @@
     <EntitySetMapping Name="Producto">
       <EntityTypeMapping TypeName="UAAEcommerceModel.Producto">
         <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="pro_blobcontainername" ColumnName="pro_blobcontainername" />
+          <ScalarProperty Name="pro_blobname" ColumnName="pro_blobname" />
           <ScalarProperty Name="idProducto" ColumnName="idProducto" />
           <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
           <ScalarProperty Name="pro_descripcion" ColumnName="pro_descripcion" />

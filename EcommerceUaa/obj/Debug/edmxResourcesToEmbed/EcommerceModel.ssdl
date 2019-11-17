@@ -120,6 +120,8 @@
     <Property Name="pro_descripcion" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="pro_codigobarra" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="pro_precio" Type="int" Nullable="false" />
+    <Property Name="pro_blobname" Type="varchar" MaxLength="100" />
+    <Property Name="pro_blobcontainername" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="TipoCliente">
     <Key>

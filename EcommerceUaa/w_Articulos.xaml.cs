@@ -1,9 +1,19 @@
-﻿using System;
+﻿using Core;
+using Core.BLL.Services;
+using EcommerceUaa.Properties;
+using Microsoft.Azure;
+using Microsoft.Win32;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,9 +32,16 @@ namespace EcommerceUaa
     {
         UAAEcommerce db = new UAAEcommerce();
         string modo = null;
+        string filePath;
+        Stream fileStream;
+        bool imageModified = false;
+        private readonly string blobStorageConnectionString;
+        private readonly string blobPath;
         public w_Articulos()
         {
             InitializeComponent();
+            blobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=ecommerceuaa;AccountKey=6aYxndfr3+YzMTaHpzQ4pRTZGCzINhTrfwARwzEuNnOmPvotMsmmLzmjmlNwaPh+OgQpWdxFFAzK27FMNWVQEw==;EndpointSuffix=core.windows.net";
+            blobPath = "https://ecommerceuaa.blob.core.windows.net/";
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -92,6 +109,7 @@ namespace EcommerceUaa
             dgvProductos.Columns[5].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[6].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[1].Visibility = Visibility.Collapsed;
+            dgvProductos.Columns[8].Visibility = Visibility.Collapsed;
             
 
         }
@@ -104,7 +122,7 @@ namespace EcommerceUaa
 
         }
 
-        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        private async void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (modo.Equals("A"))
             {
@@ -113,7 +131,18 @@ namespace EcommerceUaa
                 pro.pro_descripcion = txtDescripcion.Text;
                 pro.pro_precio = Convert.ToInt32(txtPrecio.Text);
                 pro.pro_codigobarra = txtCodBarra.Text;
-
+                string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
+                pro.pro_blobname = imageName;
+                pro.pro_blobcontainername = nameof(Constants.BlobContainers.Photos).ToLower();
+                try
+                {
+                    using (fileStream)
+                        await UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Ooops : " + exception.Message);
+                }
                 db.Producto.Add(pro);
                 db.SaveChanges();
                 ActualizarDgv();
@@ -128,7 +157,21 @@ namespace EcommerceUaa
                 pro.pro_descripcion = txtDescripcion.Text;
                 pro.pro_precio = Convert.ToInt32(txtPrecio.Text);
                 pro.pro_codigobarra = txtCodBarra.Text;
-
+                if (imageModified)
+                {
+                    string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
+                    pro.pro_blobname = imageName;
+                    pro.pro_blobcontainername = nameof(Constants.BlobContainers.Photos).ToLower();
+                    try
+                    {
+                        using (fileStream)
+                            await UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Ooops : " + exception.Message);
+                    }
+                }
                 db.Entry(pro).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 
@@ -157,6 +200,8 @@ namespace EcommerceUaa
                     txtDescripcion.Text = producto.pro_descripcion;
                     txtPrecio.Text = producto.pro_precio.ToString();
                     chbTipoProducto.SelectedItem = producto.TipoProducto;
+                    Uri fileUri = new Uri(GetBlobUrl(producto.pro_blobname, producto.pro_blobcontainername));
+                    imgDynamic.Source = new BitmapImage(fileUri);
                 }
           
                
@@ -194,6 +239,71 @@ namespace EcommerceUaa
         private void TxtPrecio_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             SoloNumero(sender, e);
+        }
+
+        private void BtnLoadFromFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                imgDynamic.Source = new BitmapImage(fileUri);
+                //Read the contents of the file into a stream
+                fileStream = openFileDialog.OpenFile();
+                imageModified = true;
+            }
+        }
+
+
+
+        private async Task<CloudBlockBlob> GetBlockBlob(string blobName, string containerName, bool isPublic = false)
+        {
+            var container = await GetBlobContainer(containerName, isPublic);
+            return container.GetBlockBlobReference(blobName);
+        }
+
+        private async Task<CloudBlobContainer> GetBlobContainer(string name, bool isPublic = false)
+        {
+            var account = CloudStorageAccount.Parse(blobStorageConnectionString);
+            var container = account.CreateCloudBlobClient().GetContainerReference(name);
+            await container.CreateIfNotExistsAsync(isPublic ? BlobContainerPublicAccessType.Blob : BlobContainerPublicAccessType.Off, null, null);
+            return container;
+        }
+
+        public async Task UploadStream(Stream stream, string blobName, string containerName, string contentType, bool isPublic = false)
+        {
+            await UploadStream(stream, blobName, containerName, contentType, new Dictionary<string, string>(), isPublic);
+        }
+
+        public string GetBlobUrl(string blobName, string containerName)
+        {
+            return $"{blobPath}{containerName}/{blobName}";
+        }
+
+        public async Task UploadStream(Stream stream, string blobName, string containerName, string contentType, IReadOnlyDictionary<string, string> metadata, bool isPublic = false)
+        {
+            var blob = await GetBlockBlob(blobName, containerName, isPublic);
+            stream.Position = 0;
+            blob.Properties.ContentType = contentType;
+            blob.Properties.CacheControl = "public, max-age=604800";
+            if (metadata != null && metadata.Any())
+            {
+                foreach (var data in metadata)
+                {
+                    if (blob.Metadata.ContainsKey(data.Key))
+                    {
+                        blob.Metadata[data.Key] = data.Value;
+                    }
+                    else
+                    {
+                        blob.Metadata.Add(data.Key, data.Value);
+                    }
+                }
+            }
+
+            await blob.UploadFromStreamAsync(stream, stream.Length);
         }
     }
 }

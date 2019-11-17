@@ -72,13 +72,13 @@
                     <Image Height="80" VerticalAlignment="Bottom"/>
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                    <ListViewItem x:Name="Productos" Height="60" Selected="Productos_Selected">
+                    <ListViewItem x:Name="Productos" Height="60" MouseLeftButtonUp="Productos_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="PackageVariant" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Articulos" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Clientes" Height="60" Selected="Clientes_Selected">
+                    <ListViewItem x:Name="Clientes" Height="60" MouseLeftButtonUp="Clientes_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountAdd" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Clientes" VerticalAlignment="Center" Margin="20 10"/>
@@ -93,6 +93,12 @@
                     <ListViewItem x:Name="Reclamos" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Reclamos" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="TipoProducto" Height="60" MouseLeftButtonUp="TipoProducto_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FormatAlignCenter" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Reclamos" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>

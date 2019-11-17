@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EcommerceUaa.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StorageAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DefaultEndpointsProtocol=https;AccountName=ecommerceuaa;AccountKey=6aYxndfr3+YzMTaHpzQ4pRTZGCzINhTrfwARwzEuNnOmPvotMsmmLzmjmlNwaPh+OgQpWdxFFAzK27FMNWVQEw==;EndpointSuffix=core.windows.net</Value>
+    </Setting>
+    <Setting Name="BlobPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://ecommerceuaa.blob.core.windows.net/</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -1,0 +1,9 @@
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\bin\Debug\netstandard2.0\Core.BLL.deps.json
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\bin\Debug\netstandard2.0\Core.BLL.dll
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\bin\Debug\netstandard2.0\Core.BLL.pdb
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.csprojAssemblyReference.cache
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.AssemblyInfoInputs.cache
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.AssemblyInfo.cs
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.dll
+C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core.BLL\obj\Debug\netstandard2.0\Core.BLL.pdb

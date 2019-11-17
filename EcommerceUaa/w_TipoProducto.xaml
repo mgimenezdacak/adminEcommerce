@@ -1,0 +1,21 @@
+﻿<Window x:Class="EcommerceUaa.w_TipoProducto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcommerceUaa"
+        mc:Ignorable="d"
+        Title="w_TipoProducto" Height="569.614" Width="592.679" Loaded="WindoLoaded">
+    <Grid Margin="0,0,3.6,3">
+        <DataGrid HorizontalAlignment="Left" Height="210" Margin="47,58,0,0" VerticalAlignment="Top" Width="494" Name="dgvTipoProducto" SelectionChanged="ChangeDgvChanged"/>
+        <Label Content="Tipo de Producto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.469" Width="163" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="110,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnAgregar_Click" Name="btnAgregar"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="252,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnModificar_Click"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="398,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Name="btnEliminar" Click="BtnEliminar_Click"/>
+        <Label Content="Descripcion: " HorizontalAlignment="Left" Margin="101,387,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="252,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtDescripcion"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" Margin="327,474,187.8,0" VerticalAlignment="Top" Click="BtnCancelar_Click" />
+        <Button x:Name="btnGuardar" Content="Guardar" Margin="405,474,109.8,0" VerticalAlignment="Top" Click="BtnGuardar_Click" RenderTransformOrigin="1.658,0.404" />
+
+    </Grid>
+</Window>
