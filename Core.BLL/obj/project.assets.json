@@ -47,7 +47,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "NETStandard.Library/2.0.3": {
+      "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -759,14 +759,16 @@
         "runtime.json"
       ]
     },
-    "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+    "NETStandard.Library/2.0.1": {
+      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "type": "package",
-      "path": "netstandard.library/2.0.3",
+      "path": "netstandard.library/2.0.1",
       "files": [
-        ".nupkg.metadata",
         "LICENSE.TXT",
+        "NETStandard.Library.2.0.1.nupkg.sha512",
+        "NETStandard.Library.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -882,18 +884,14 @@
         "build/netstandard2.0/ref/mscorlib.dll",
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
-        "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.3.nupkg.sha512",
-        "netstandard.library.nuspec"
+        "lib/netstandard1.0/_._"
       ]
     },
     "Newtonsoft.Json/10.0.2": {
-      "sha512": "iwElSU2IXmwGvytJsezyDML2ZWDkG2JzTYzlU/BNlmzMdlmRvbnwITsGGY74gwVEpDli1UdOLkMT7/3jxWvXzA==",
+      "sha512": "vcX8ci+srBr5scnSKCUNNoFo5BQ6KjdfeJ5LCJQhvxncNkTy7w3pAWsnRJrsF9WBBdMiaQp0aOa3YRh1CDCc7A==",
       "type": "package",
       "path": "newtonsoft.json/10.0.2",
-      "hasTools": true,
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
@@ -3135,11 +3133,10 @@
       ]
     },
     "WindowsAzure.Storage/9.3.3": {
-      "sha512": "VUV8j6dzkU/7vDgk5k+ob5g7nnch2fNByr0p9aOxMGFGk+tAnTehrZ4qnClF04CVozP1GNN2zrnbsxCmr+iZBg==",
+      "sha512": "nBRir2+4rZgm5xWwAe6DMGepLprFmVsAby6gV06Y1pkWkMoZxMAO6x3Bid2SH0SBpSSE43nHwx8Y0G4FDN6XJg==",
       "type": "package",
       "path": "windowsazure.storage/9.3.3",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.WindowsAzure.Storage.dll",
         "lib/net45/Microsoft.WindowsAzure.Storage.pdb",
@@ -3161,32 +3158,32 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3",
+      "NETStandard.Library >= 2.0.1",
       "WindowsAzure.Storage >= 9.3.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aspire 5\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Emigdio\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core.BLL\\Core.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\Emigdio\\Source\\Repos\\adminEcommerce\\Core.BLL\\Core.BLL.csproj",
       "projectName": "Core.BLL",
-      "projectPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core.BLL\\Core.BLL.csproj",
-      "packagesPath": "C:\\Users\\Aspire 5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core.BLL\\obj\\",
+      "projectPath": "C:\\Users\\Emigdio\\Source\\Repos\\adminEcommerce\\Core.BLL\\Core.BLL.csproj",
+      "packagesPath": "C:\\Users\\Emigdio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emigdio\\Source\\Repos\\adminEcommerce\\Core.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aspire 5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emigdio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -3212,7 +3209,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.3, )",
+            "version": "[2.0.1, )",
             "autoReferenced": true
           },
           "WindowsAzure.Storage": {
