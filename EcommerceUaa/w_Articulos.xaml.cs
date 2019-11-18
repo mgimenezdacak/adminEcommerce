@@ -255,6 +255,9 @@ namespace EcommerceUaa
                 imageModified = true;
             }
         }
+
+
+
         private async Task<CloudBlockBlob> GetBlockBlob(string blobName, string containerName, bool isPublic = false)
         {
             var container = await GetBlobContainer(containerName, isPublic);

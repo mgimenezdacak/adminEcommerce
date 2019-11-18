@@ -222,6 +222,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core.BLL\Core.BLL.csproj">
+      <Project>{eebc99a4-8041-42ac-a596-e0894cfce685}</Project>
+      <Name>Core.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{D77D96E0-86A8-4A6F-98A9-29F5777BDB3C}</Project>
       <Name>Core</Name>
