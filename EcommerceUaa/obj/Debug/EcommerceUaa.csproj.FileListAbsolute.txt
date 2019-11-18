@@ -315,19 +315,6 @@ C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\obj\Debug\Ecommer
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.csproj.CopyComplete
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.exe
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.pdb
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.csprojAssemblyReference.cache
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.exe.config
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\menu.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Articulos.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Cliente.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Pedido.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_TipoProducto.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\App.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_Content.g.cs
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_MarkupCompile.cache
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_MarkupCompile.lref
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.exe
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.pdb
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\EcommerceUaa.exe.config
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\EcommerceUaa.exe
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\EcommerceUaa.pdb
@@ -433,7 +420,6 @@ C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bi
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\MaterialDesignColors.dll
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Storage.dll
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Core.pdb
@@ -443,10 +429,20 @@ C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bi
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
-C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Storage.xml
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.csprojAssemblyReference.cache
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.exe.config
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\menu.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Articulos.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Cliente.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Pedido.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_TipoProducto.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\App.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_Content.g.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_MarkupCompile.cache
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa_MarkupCompile.lref
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\App.baml
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\menu.baml
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\w_Articulos.baml
@@ -457,3 +453,5 @@ C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\ob
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.Properties.Resources.resources
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.csproj.GenerateResource.cache
 C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.csproj.CopyComplete
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.exe
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\EcommerceUaa\obj\Debug\EcommerceUaa.pdb

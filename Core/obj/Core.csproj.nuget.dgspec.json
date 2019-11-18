@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj": {}
+    "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj": {
+    "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\Aspire 5\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Rugertek-Development\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aspire 5\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Rugertek-Development\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard1.6"
@@ -48,7 +46,8 @@
               "version": "[1.6.1, )",
               "autoReferenced": true
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
