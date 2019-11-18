@@ -15,3 +15,11 @@ C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core\obj\Debug\netstandard2.0\
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.AssemblyInfo.cs
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.pdb
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\bin\Debug\netstandard2.0\Core.deps.json
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.csprojAssemblyReference.cache
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.AssemblyInfoInputs.cache
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.AssemblyInfo.cs
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.dll
+C:\Users\Rugertek-Development\Documents\Proyectos\adminEcommerce\Core\obj\Debug\netstandard2.0\Core.pdb
