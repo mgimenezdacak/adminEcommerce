@@ -40,5 +40,15 @@ namespace EcommerceUaa
             pedidoDetalle.Producto = (Producto)cboProducto.SelectedItem;
             
         }
+
+        private void ChangeDgvChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
