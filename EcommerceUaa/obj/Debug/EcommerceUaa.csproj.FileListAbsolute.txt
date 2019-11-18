@@ -271,7 +271,6 @@ C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\System.
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\System.Xml.XmlSerializer.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\System.Xml.XPath.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Core.BLL.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Core.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\EntityFramework.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\EntityFramework.SqlServer.dll
@@ -281,7 +280,6 @@ C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Microso
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Microsoft.WindowsAzure.Storage.dll
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Core.BLL.pdb
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\Core.pdb
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\EntityFramework.xml
 C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\bin\Debug\EntityFramework.SqlServer.xml

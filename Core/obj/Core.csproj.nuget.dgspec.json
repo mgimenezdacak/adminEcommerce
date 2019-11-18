@@ -1,34 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj": {}
+    "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj": {
+    "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\Rugertek-Development\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rugertek-Development\\Documents\\Proyectos\\adminEcommerce\\Core\\obj\\",
+        "projectPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Aspire 5\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aspire 5\\Documents\\GitHub\\adminEcommerce\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rugertek-Development\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Aspire 5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard1.6"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netstandard1.6": {
             "projectReferences": {}
           }
         },
@@ -39,26 +41,14 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netstandard1.6": {
           "dependencies": {
             "NETStandard.Library": {
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.0.3, )",
+              "version": "[1.6.1, )",
               "autoReferenced": true
             }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          }
         }
       }
     }
