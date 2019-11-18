@@ -22,25 +22,5 @@ namespace EcommerceUaa.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=ecommerceuaa;AccountKey=6aYxndfr3+YzMT" +
-            "aHpzQ4pRTZGCzINhTrfwARwzEuNnOmPvotMsmmLzmjmlNwaPh+OgQpWdxFFAzK27FMNWVQEw==;Endpo" +
-            "intSuffix=core.windows.net")]
-        public string StorageAccount {
-            get {
-                return ((string)(this["StorageAccount"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://ecommerceuaa.blob.core.windows.net/")]
-        public string BlobPath {
-            get {
-                return ((string)(this["BlobPath"]));
-            }
-        }
     }
 }
