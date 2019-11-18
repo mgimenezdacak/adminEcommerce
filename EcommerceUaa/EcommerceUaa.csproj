@@ -102,6 +102,7 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>EcommerceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Core\Constants.cs" />
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>EcommerceModel.tt</DependentUpon>
     </Compile>
@@ -224,12 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{D77D96E0-86A8-4A6F-98A9-29F5777BDB3C}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

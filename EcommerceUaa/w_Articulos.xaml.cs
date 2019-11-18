@@ -1,4 +1,4 @@
-﻿using Core;
+﻿using EcommerceUaa.Core;
 using Microsoft.Win32;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -124,7 +124,7 @@ namespace EcommerceUaa
                 pro.pro_codigobarra = txtCodBarra.Text;
                 string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
                 pro.pro_blobname = imageName;
-                pro.pro_blobcontainername = nameof(Constants.BlobContainers.Photos).ToLower();
+                pro.pro_blobcontainername = nameof(Constants.BlobContainer.Photos).ToLower();
                 try
                 {
                     using (fileStream)
@@ -152,7 +152,7 @@ namespace EcommerceUaa
                 {
                     string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
                     pro.pro_blobname = imageName;
-                    pro.pro_blobcontainername = nameof(Constants.BlobContainers.Photos).ToLower();
+                    pro.pro_blobcontainername = nameof(Constants.BlobContainer.Photos).ToLower();
                     try
                     {
                         using (fileStream)
