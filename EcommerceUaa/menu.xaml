@@ -84,13 +84,13 @@
                             <TextBlock Text="Clientes" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Pedidos" Height="60">
+                    <ListViewItem x:Name="Pedidos" Height="60" MouseLeftButtonUp="Pedidos_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="cart" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="cart" Height="25" Width="25" Margin="10" />
                             <TextBlock Text="Pedidos" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Reclamos" Height="60">
+                    <ListViewItem x:Name="Reclamos" Height="60" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Reclamos" VerticalAlignment="Center"  Margin="20 10"/>

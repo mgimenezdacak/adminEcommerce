@@ -38,5 +38,6 @@ namespace EcommerceUaa
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<TipoCliente> TipoCliente { get; set; }
         public virtual DbSet<TipoProducto> TipoProducto { get; set; }
+        public virtual DbSet<Entrega> Entrega { get; set; }
     }
 }

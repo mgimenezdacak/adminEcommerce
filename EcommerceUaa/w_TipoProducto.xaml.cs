@@ -74,7 +74,7 @@ namespace EcommerceUaa
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             var tipo = (TipoProducto)dgvTipoProducto.SelectedValue;
-            if (!(tipo is null))
+            if (!(tipo == null))
             {
                 db.TipoProducto.Remove(tipo);
                 BloquearFormulario();
@@ -104,7 +104,7 @@ namespace EcommerceUaa
         private void ChangeDgvChanged(object sender, SelectionChangedEventArgs e)
         {
             var tipo = (TipoProducto)dgvTipoProducto.SelectedValue;
-            if (!(tipo is null))
+            if (!(tipo == null))
             {
                 idToEdit = tipo.idTipoProducto;
                 txtDescripcion.Text = tipo.tipro_descripcion;

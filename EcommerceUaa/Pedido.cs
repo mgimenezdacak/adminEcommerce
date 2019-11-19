@@ -14,6 +14,12 @@ namespace EcommerceUaa
     
     public partial class Pedido
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Pedido()
+        {
+            this.Entrega = new HashSet<Entrega>();
+        }
+    
         public int idPedido { get; set; }
         public int idCliente { get; set; }
         public System.DateTime ped_fecha { get; set; }
@@ -22,5 +28,7 @@ namespace EcommerceUaa
     
         public virtual Cliente Cliente { get; set; }
         public virtual PedidoDetalle PedidoDetalle { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Entrega> Entrega { get; set; }
     }
 }

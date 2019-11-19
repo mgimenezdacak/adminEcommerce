@@ -20,6 +20,7 @@ namespace EcommerceUaa
     public partial class w_Pedido : Window
     {
         UAAEcommerce db = new UAAEcommerce();
+        Pedido pedidoAEntregar = new Pedido();
         public w_Pedido()
         {
             InitializeComponent();
@@ -27,28 +28,43 @@ namespace EcommerceUaa
 
         private void WindoLoaded(object sender, RoutedEventArgs e)
         {
-            cboCliente.ItemsSource = db.Cliente.ToList();
-            cboProducto.ItemsSource = db.Producto.ToList();
-            cboProducto.SelectedItem = null;
-            cboCliente.SelectedItem = null;
-
+            ActualizarDGV();
+        }
+        private void ActualizarDGV()
+        {
+            dgvOrdenes.ItemsSource = db.Entrega.ToList();
+            dgvPedidos.ItemsSource = db.Pedido.ToList();
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            PedidoDetalle pedidoDetalle = new PedidoDetalle();
-            pedidoDetalle.Producto = (Producto)cboProducto.SelectedItem;
+            if (!(pedidoAEntregar == null))
+            {
+                var entrega = new Entrega(){
+                    id_pedido = pedidoAEntregar.idPedido,
+                    chofer = txtChofer.Text,
+                    fecha = Convert.ToDateTime(dtpFecha.Text)
+                };
+                db.Entrega.Add(entrega);
+                db.SaveChanges();
+                ActualizarDGV();
+            }
             
         }
 
-        private void ChangeDgvChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
 
+        private void DgvPedidosChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgvPedidos.SelectedItems.Count < 1)
+                return;
+            var item = (Pedido)dgvPedidos.SelectedItem;
+            pedidoAEntregar = item;
         }
     }
 }

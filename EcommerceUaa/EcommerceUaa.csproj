@@ -121,6 +121,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EcommerceModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entrega.cs">
+      <DependentUpon>EcommerceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MensajesWeb.cs">
       <DependentUpon>EcommerceModel.tt</DependentUpon>
     </Compile>
