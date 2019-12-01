@@ -1,0 +1,19 @@
+﻿<Window x:Class="EcommerceUaa.w_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EcommerceUaa"
+        mc:Ignorable="d"
+        Title="Ingresar" Height="225" Width="421.504" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Label Content="Ingresa al sistema" HorizontalAlignment="Left" Margin="122,26,0,0" VerticalAlignment="Top" Width="181" FontSize="18" FontFamily="Segoe UI Black"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" MaxLength="50" Height="23" Margin="110,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
+        <PasswordBox   x:Name="txtClave"  HorizontalAlignment="Left" MaxLength="16" Height="23" Margin="111,122,0,0" VerticalAlignment="Top" Width="210" AutomationProperties.AccessKey="*"/>
+        <Label Content="Mail:" HorizontalAlignment="Left" Margin="52,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Clave:" HorizontalAlignment="Left" Margin="52,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.162,0.351" Width="42"/>
+        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="316,175,0,0" VerticalAlignment="Top" Width="75" Click="BtnIngresar_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="218,175,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click"/>
+
+    </Grid>
+</Window>
