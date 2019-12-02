@@ -12,6 +12,7 @@ namespace EcommerceUaa
         public string email { get; set; }
         public string password { get; set; }
 
+        
 
         public static async Task<bool> VerificarLogin(Usuario u)
         {
@@ -29,5 +30,12 @@ namespace EcommerceUaa
             }
 
         }
+
+        public override string ToString()
+        {
+            return email;
+        }
+
+        
     }
 }

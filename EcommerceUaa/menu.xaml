@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:EcommerceUaa"
-        mc:Ignorable="d" Title="menu" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Title="menu" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -38,9 +38,8 @@
                 <!--<TextBlock Text="Menu" VerticalAlignment="Center" FontSize="16"/>-->
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button x:Name="btnUsuarios" Content="Usuarios"/>
-                        <Button x:Name="btnCuenta" Content="Cuenta"/>
-                        <Button x:Name="btnAcerca" Content="Acerca De"/>
+                        <!--<Button x:Name="btnUsuarios" Content="Usuarios"/>-->
+                        <Button x:Name="btnAcerca" Content="Acerca De" Click="BtnAcerca_Click"/>
                         <Separator/>
                         <Button Content="Salir" Name="btnSalir" Click="BtnSalir_Click"/>
                     </StackPanel>
@@ -80,7 +79,7 @@
                     </ListViewItem>
                     <ListViewItem x:Name="Clientes" Height="60" MouseLeftButtonUp="Clientes_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="AccountAdd" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="User" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Clientes" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
@@ -90,7 +89,7 @@
                             <TextBlock Text="Pedidos" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="Reclamos" Height="60" >
+                    <!--<ListViewItem x:Name="Reclamos" Height="60" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Reclamos" VerticalAlignment="Center"  Margin="20 10"/>
@@ -101,7 +100,7 @@
                             <materialDesign:PackIcon Kind="FormatAlignCenter" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Reclamos" VerticalAlignment="Center"  Margin="20 10"/>
                         </StackPanel>
-                    </ListViewItem>
+                    </ListViewItem>-->
                 </ListView>
             </StackPanel>
         </Grid>

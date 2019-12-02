@@ -84,5 +84,18 @@ namespace EcommerceUaa
             w_Pedido frm = new w_Pedido();
             frm.ShowDialog();
         }
+
+       
+
+        private void BtnAcerca_Click(object sender, RoutedEventArgs e)
+        {
+            w_About frm = new w_About();
+            frm.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

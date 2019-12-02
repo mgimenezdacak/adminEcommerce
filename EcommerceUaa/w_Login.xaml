@@ -7,11 +7,17 @@
         mc:Ignorable="d"
         Title="Ingresar" Height="225" Width="421.504" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        <Label Content="Ingresa al sistema" HorizontalAlignment="Left" Margin="122,26,0,0" VerticalAlignment="Top" Width="181" FontSize="18" FontFamily="Segoe UI Black"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFDDEBFF" Offset="0.81"/>
+                <GradientStop Color="#FF7DB2FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Ingresa al sistema" HorizontalAlignment="Left" Margin="122,26,0,0" VerticalAlignment="Top" Width="181" FontSize="18" FontFamily="Segoe UI Black" Background="{x:Null}" Foreground="#DD000000"/>
         <TextBox x:Name="txtMail" HorizontalAlignment="Left" MaxLength="50" Height="23" Margin="110,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
         <PasswordBox   x:Name="txtClave"  HorizontalAlignment="Left" MaxLength="16" Height="23" Margin="111,122,0,0" VerticalAlignment="Top" Width="210" AutomationProperties.AccessKey="*"/>
-        <Label Content="Mail:" HorizontalAlignment="Left" Margin="52,72,0,0" VerticalAlignment="Top"/>
-        <Label Content="Clave:" HorizontalAlignment="Left" Margin="52,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.162,0.351" Width="42"/>
+        <Label Content="Mail:" HorizontalAlignment="Left" Margin="52,72,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
+        <Label Content="Clave:" HorizontalAlignment="Left" Margin="52,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.162,0.351" Width="42" Foreground="#DD000000"/>
         <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="316,175,0,0" VerticalAlignment="Top" Width="75" Click="BtnIngresar_Click"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="218,175,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click"/>
 

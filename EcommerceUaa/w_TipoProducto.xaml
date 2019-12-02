@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcommerceUaa"
         mc:Ignorable="d"
-        Title="w_TipoProducto" Height="569.614" Width="592.679" Loaded="WindoLoaded">
+        Title="Tipo de producto" Height="569.614" Width="592.679" Loaded="WindoLoaded">
     <Grid Margin="0,0,3.6,3">
         <DataGrid HorizontalAlignment="Left" Height="210" Margin="47,58,0,0" VerticalAlignment="Top" Width="494" Name="dgvTipoProducto" SelectionChanged="ChangeDgvChanged"/>
         <Label Content="Tipo de Producto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.469" Width="163" FontSize="18" FontWeight="Bold"/>

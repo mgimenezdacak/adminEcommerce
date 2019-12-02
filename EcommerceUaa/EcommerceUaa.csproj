@@ -146,6 +146,9 @@
       <DependentUpon>EcommerceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="w_About.xaml.cs">
+      <DependentUpon>w_About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_Articulos.xaml.cs">
       <DependentUpon>w_Articulos.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
