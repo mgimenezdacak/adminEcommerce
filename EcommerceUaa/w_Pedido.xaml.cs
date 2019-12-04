@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UAAEcommerce.Services;
 
 namespace EcommerceUaa
 {
@@ -21,6 +22,7 @@ namespace EcommerceUaa
     {
         UAAEcommerce db = new UAAEcommerce();
         Pedido pedidoAEntregar = new Pedido();
+        Recommender recommender = new Recommender();
         public w_Pedido()
         {
             InitializeComponent();
@@ -65,6 +67,11 @@ namespace EcommerceUaa
                 return;
             var item = (Pedido)dgvPedidos.SelectedItem;
             pedidoAEntregar = item;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            recommender.TrainModel();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EcommerceUaa.Core;
+using EcommerceUaa.Services;
 using Microsoft.Win32;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -22,17 +23,14 @@ namespace EcommerceUaa
     public partial class w_Articulos : Window
     {
         UAAEcommerce db = new UAAEcommerce();
+        BlobStorageService blobStorage = new BlobStorageService();
         string modo = null;
         string filePath;
         Stream fileStream;
         bool imageModified = false;
-        private readonly string blobStorageConnectionString;
-        private readonly string blobPath;
         public w_Articulos()
         {
             InitializeComponent();
-            blobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=ecommerceuaa;AccountKey=6aYxndfr3+YzMTaHpzQ4pRTZGCzINhTrfwARwzEuNnOmPvotMsmmLzmjmlNwaPh+OgQpWdxFFAzK27FMNWVQEw==;EndpointSuffix=core.windows.net";
-            blobPath = "https://ecommerceuaa.blob.core.windows.net/";
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -134,7 +132,7 @@ namespace EcommerceUaa
                 try
                 {
                     using (fileStream)
-                        await UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
+                        await blobStorage.UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
                 }
                 catch (Exception exception)
                 {
@@ -162,7 +160,7 @@ namespace EcommerceUaa
                     try
                     {
                         using (fileStream)
-                            await UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
+                            await blobStorage.UploadStream(fileStream, pro.pro_blobname, pro.pro_blobcontainername, MimeMapping.GetMimeMapping(imageName));
                     }
                     catch (Exception exception)
                     {
@@ -197,7 +195,7 @@ namespace EcommerceUaa
                     txtDescripcion.Text = producto.pro_descripcion;
                     txtPrecio.Text = producto.pro_precio.ToString();
                     chbTipoProducto.SelectedItem = producto.TipoProducto;
-                    Uri fileUri = new Uri(GetBlobUrl(producto.pro_blobname, producto.pro_blobcontainername));
+                    Uri fileUri = new Uri(blobStorage.GetBlobUrl(producto.pro_blobname, producto.pro_blobcontainername));
                     imgDynamic.Source = new BitmapImage(fileUri);
                 }
           
@@ -251,56 +249,6 @@ namespace EcommerceUaa
                 fileStream = openFileDialog.OpenFile();
                 imageModified = true;
             }
-        }
-
-
-
-        private async Task<CloudBlockBlob> GetBlockBlob(string blobName, string containerName, bool isPublic = false)
-        {
-            var container = await GetBlobContainer(containerName, isPublic);
-            return container.GetBlockBlobReference(blobName);
-        }
-
-        private async Task<CloudBlobContainer> GetBlobContainer(string name, bool isPublic = false)
-        {
-            var account = CloudStorageAccount.Parse(blobStorageConnectionString);
-            var container = account.CreateCloudBlobClient().GetContainerReference(name);
-            await container.CreateIfNotExistsAsync(isPublic ? BlobContainerPublicAccessType.Blob : BlobContainerPublicAccessType.Off, null, null);
-            return container;
-        }
-
-        public async Task UploadStream(Stream stream, string blobName, string containerName, string contentType, bool isPublic = false)
-        {
-            await UploadStream(stream, blobName, containerName, contentType, new Dictionary<string, string>(), isPublic);
-        }
-
-        public string GetBlobUrl(string blobName, string containerName)
-        {
-            return $"{blobPath}{containerName}/{blobName}";
-        }
-
-        public async Task UploadStream(Stream stream, string blobName, string containerName, string contentType, IReadOnlyDictionary<string, string> metadata, bool isPublic = false)
-        {
-            var blob = await GetBlockBlob(blobName, containerName, isPublic);
-            stream.Position = 0;
-            blob.Properties.ContentType = contentType;
-            blob.Properties.CacheControl = "public, max-age=604800";
-            if (metadata != null && metadata.Any())
-            {
-                foreach (var data in metadata)
-                {
-                    if (blob.Metadata.ContainsKey(data.Key))
-                    {
-                        blob.Metadata[data.Key] = data.Value;
-                    }
-                    else
-                    {
-                        blob.Metadata.Add(data.Key, data.Value);
-                    }
-                }
-            }
-
-            await blob.UploadFromStreamAsync(stream, stream.Length);
         }
     }
 }
