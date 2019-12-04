@@ -19,5 +19,6 @@
         <TextBox x:Name="txtChofer" HorizontalAlignment="Left" Height="23" Margin="196,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DatePicker Name="dtpFecha" HorizontalAlignment="Left" Margin="196,344,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Fecha" HorizontalAlignment="Left" Margin="146,354,0,0" VerticalAlignment="Top"/>
+        <Button Content="Entrenar recomendaciones" HorizontalAlignment="Left" Margin="331,300,0,0" VerticalAlignment="Top" Width="145" Click="Button_Click"/>
     </Grid>
 </Window>

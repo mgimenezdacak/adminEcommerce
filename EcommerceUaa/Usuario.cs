@@ -22,7 +22,7 @@ namespace EcommerceUaa
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage respuesta = await client.PostAsJsonAsync("Account/LoginWpf", u);
+                HttpResponseMessage respuesta = await client.PostAsJsonAsync("Account/Login", new { email = u.email, password = u.password, rememberMe = false });
                 if (respuesta.IsSuccessStatusCode)
                     return true;
                 else
