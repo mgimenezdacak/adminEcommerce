@@ -33,10 +33,17 @@ namespace EcommerceUaa
             try
             {
                 dgvClientes.ItemsSource = datos.Cliente.ToList();
-                dgvClientes.Columns[0].Visibility = Visibility.Collapsed;
+                dgvClientes.Columns[1].Visibility = Visibility.Collapsed;
+                dgvClientes.Columns[2].Visibility = Visibility.Collapsed;
                 dgvClientes.Columns[8].Visibility = Visibility.Collapsed;
                 dgvClientes.Columns[9].Visibility = Visibility.Collapsed;
                 dgvClientes.Columns[10].Visibility = Visibility.Collapsed;
+                dgvClientes.Columns[0].Header = "Id";
+                dgvClientes.Columns[3].Header = "RUC";
+                dgvClientes.Columns[4].Header = "Razon Social";
+                dgvClientes.Columns[5].Header = "Direccion";
+                dgvClientes.Columns[6].Header = "Email";
+                dgvClientes.Columns[7].Header = "Telefono";
             }
             catch (Exception ex)
             {

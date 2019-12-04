@@ -115,7 +115,7 @@ namespace EcommerceUaa {
         
         #line 24 "..\..\w_Articulos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnGuardar;
+        internal System.Windows.Controls.Image imgDynamic;
         
         #line default
         #line hidden
@@ -123,7 +123,7 @@ namespace EcommerceUaa {
         
         #line 25 "..\..\w_Articulos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Image imgDynamic;
+        internal System.Windows.Controls.Button btnLoadFromFile;
         
         #line default
         #line hidden
@@ -131,7 +131,7 @@ namespace EcommerceUaa {
         
         #line 26 "..\..\w_Articulos.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnLoadFromFile;
+        internal System.Windows.Controls.Button btnGuardar;
         
         #line default
         #line hidden
@@ -244,22 +244,22 @@ namespace EcommerceUaa {
             #line hidden
             return;
             case 11:
-            this.btnGuardar = ((System.Windows.Controls.Button)(target));
+            this.imgDynamic = ((System.Windows.Controls.Image)(target));
+            return;
+            case 12:
+            this.btnLoadFromFile = ((System.Windows.Controls.Button)(target));
             
-            #line 24 "..\..\w_Articulos.xaml"
-            this.btnGuardar.Click += new System.Windows.RoutedEventHandler(this.BtnGuardar_Click);
+            #line 25 "..\..\w_Articulos.xaml"
+            this.btnLoadFromFile.Click += new System.Windows.RoutedEventHandler(this.BtnLoadFromFile_Click);
             
             #line default
             #line hidden
             return;
-            case 12:
-            this.imgDynamic = ((System.Windows.Controls.Image)(target));
-            return;
             case 13:
-            this.btnLoadFromFile = ((System.Windows.Controls.Button)(target));
+            this.btnGuardar = ((System.Windows.Controls.Button)(target));
             
             #line 26 "..\..\w_Articulos.xaml"
-            this.btnLoadFromFile.Click += new System.Windows.RoutedEventHandler(this.BtnLoadFromFile_Click);
+            this.btnGuardar.Click += new System.Windows.RoutedEventHandler(this.BtnAgregar_Click);
             
             #line default
             #line hidden

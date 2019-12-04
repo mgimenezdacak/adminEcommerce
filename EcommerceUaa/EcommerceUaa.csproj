@@ -59,6 +59,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -142,11 +145,18 @@
     <Compile Include="TipoProducto.cs">
       <DependentUpon>EcommerceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
+    <Compile Include="w_About.xaml.cs">
+      <DependentUpon>w_About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_Articulos.xaml.cs">
       <DependentUpon>w_Articulos.xaml</DependentUpon>
     </Compile>
     <Compile Include="w_Cliente.xaml.cs">
       <DependentUpon>w_Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_Login.xaml.cs">
+      <DependentUpon>w_Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="w_Pedido.xaml.cs">
       <DependentUpon>w_Pedido.xaml</DependentUpon>
@@ -197,11 +207,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="w_About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="w_Articulos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="w_Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

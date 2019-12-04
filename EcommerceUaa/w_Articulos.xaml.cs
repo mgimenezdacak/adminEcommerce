@@ -97,9 +97,15 @@ namespace EcommerceUaa
             dgvProductos.ItemsSource = listaProductos;*/
 
             dgvProductos.ItemsSource = db.Producto.ToList();
+            dgvProductos.Columns[0].Header = "Id";
+            dgvProductos.Columns[2].Header = "Descripcion";
+            dgvProductos.Columns[3].Header = "Codigo de barra";
+            dgvProductos.Columns[4].Header = "Precio";
+
             dgvProductos.Columns[5].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[6].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[1].Visibility = Visibility.Collapsed;
+            dgvProductos.Columns[7].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[8].Visibility = Visibility.Collapsed;
             
 
