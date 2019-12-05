@@ -256,6 +256,9 @@
     <Compile Include="w_Pedido.xaml.cs">
       <DependentUpon>w_Pedido.xaml</DependentUpon>
     </Compile>
+    <Compile Include="w_TipoCliente.xaml.cs">
+      <DependentUpon>w_TipoCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_TipoProducto.xaml.cs">
       <DependentUpon>w_TipoProducto.xaml</DependentUpon>
     </Compile>
@@ -319,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="w_Pedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_TipoCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

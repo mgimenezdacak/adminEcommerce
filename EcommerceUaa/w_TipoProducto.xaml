@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcommerceUaa"
         mc:Ignorable="d"
-        Title="Tipo de producto" Height="569.614" Width="592.679" Loaded="WindoLoaded">
-    <Grid Margin="0,0,3.6,3">
-        <DataGrid HorizontalAlignment="Left" Height="210" Margin="47,58,0,0" VerticalAlignment="Top" Width="494" Name="dgvTipoProducto" SelectionChanged="ChangeDgvChanged"/>
+        Title="Tipo de producto" Height="498.917" Width="521.662" Loaded="WindoLoaded">
+    <Grid Margin="6,0,-73,3">
+        <DataGrid HorizontalAlignment="Left" Height="210" Margin="47,58,0,0" VerticalAlignment="Top" Width="426" Name="dgvTipoProducto" SelectionChanged="ChangeDgvChanged"/>
         <Label Content="Tipo de Producto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.469" Width="163" FontSize="18" FontWeight="Bold"/>
-        <Button Content="Agregar" HorizontalAlignment="Left" Margin="110,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnAgregar_Click" Name="btnAgregar"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="252,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnModificar_Click"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="398,302,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Name="btnEliminar" Click="BtnEliminar_Click"/>
-        <Label Content="Descripcion: " HorizontalAlignment="Left" Margin="101,387,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="252,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="txtDescripcion"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" Margin="327,474,187.8,0" VerticalAlignment="Top" Click="BtnCancelar_Click" />
-        <Button x:Name="btnGuardar" Content="Guardar" Margin="405,474,109.8,0" VerticalAlignment="Top" Click="BtnGuardar_Click" RenderTransformOrigin="1.658,0.404" />
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="107,293,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnAgregar_Click" Name="btnAgregar"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="216,293,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Click="BtnModificar_Click"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="324,293,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.124,-0.195" Name="btnEliminar" Click="BtnEliminar_Click"/>
+        <Label Content="Descripcion: " HorizontalAlignment="Left" Margin="73,370,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="144,369,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Name="txtDescripcion"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" Margin="307,417,206,0" VerticalAlignment="Top" Click="BtnCancelar_Click" />
+        <Button x:Name="btnGuardar" Content="Guardar" Margin="385,417,128,0" VerticalAlignment="Top" Click="BtnGuardar_Click" RenderTransformOrigin="1.658,0.404" />
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="73,345,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="92,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" IsEnabled="False"/>
 
     </Grid>
 </Window>

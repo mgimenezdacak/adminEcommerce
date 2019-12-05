@@ -227,5 +227,11 @@ namespace EcommerceUaa
                 }
             }
         }
+
+        private void BtnTipoCliente_Click(object sender, RoutedEventArgs e)
+        {
+            w_TipoCliente frm = new w_TipoCliente();
+            frm.ShowDialog();
+        }
     }
 }

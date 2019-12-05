@@ -31,6 +31,10 @@ namespace EcommerceUaa
         {
             dgvTipoProducto.ItemsSource = db.TipoProducto.ToList();
             dgvTipoProducto.Columns[2].Visibility = Visibility.Collapsed;
+            dgvTipoProducto.CanUserAddRows = false;
+            dgvTipoProducto.Columns[0].Header = "Id";
+            dgvTipoProducto.Columns[1].Header = "Descripcion";
+
         }
 
         private void WindoLoaded(object sender, RoutedEventArgs e)
@@ -58,8 +62,7 @@ namespace EcommerceUaa
                 };
                 db.TipoProducto.Add(tipo);
                 db.SaveChanges();
-                ActualizarDgv();
-                BloquearFormulario();
+               
             }
             if (modo == "E")
             {
@@ -67,19 +70,26 @@ namespace EcommerceUaa
                 tipo.tipro_descripcion = txtDescripcion.Text;
                 db.Entry(tipo).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                ActualizarDgv();
-                BloquearFormulario();
+               
             }
+
+            ActualizarDgv();
+            BloquearFormulario();
+            LimpiarFormulario();
         }
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            var tipo = (TipoProducto)dgvTipoProducto.SelectedValue;
-            if (!(tipo == null))
+            if (MessageBox.Show("Confirma la eliminación del registro?", "Eliminacion de registro", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                db.TipoProducto.Remove(tipo);
-                BloquearFormulario();
-                db.SaveChanges();
-                ActualizarDgv();
+                var tipo = (TipoProducto)dgvTipoProducto.SelectedValue;
+                if (!(tipo == null))
+                {
+                    db.TipoProducto.Remove(tipo);
+                    BloquearFormulario();
+                    db.SaveChanges();
+                    ActualizarDgv();
+                    LimpiarFormulario();
+                }
             }
         }
 
@@ -107,8 +117,15 @@ namespace EcommerceUaa
             if (!(tipo == null))
             {
                 idToEdit = tipo.idTipoProducto;
+                txtId.Text = tipo.idTipoProducto.ToString();
                 txtDescripcion.Text = tipo.tipro_descripcion;
             }
+        }
+        
+        private void LimpiarFormulario()
+        {
+            txtId.Text = null;
+            txtDescripcion.Text = null;
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
@@ -116,6 +133,7 @@ namespace EcommerceUaa
             txtDescripcion.Text = "";
             modo = "A";
             DesbloquearFormulario();
+            LimpiarFormulario();
         }
     }
 }

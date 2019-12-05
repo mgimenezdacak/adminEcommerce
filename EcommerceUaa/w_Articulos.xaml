@@ -24,6 +24,7 @@
         <Image HorizontalAlignment="Left" Height="100" Margin="202,302,0,0" VerticalAlignment="Top" Width="100" Name="imgDynamic"/>
         <Button Content="Cambiar imagen" HorizontalAlignment="Left" Margin="206,402,0,0" VerticalAlignment="Top" Width="93" Name="btnLoadFromFile" Click="BtnLoadFromFile_Click"/>
         <Button x:Name="btnGuardar" Content="Guardar" Margin="385,554,66,0" VerticalAlignment="Top" Click="BtnGuardar_Click" Width="Auto"/>
+        <Button x:Name="btnTipoProducto" Content=".." HorizontalAlignment="Left" Margin="300,502,0,0" VerticalAlignment="Top" Width="20" Height="18" Click="BtnTipoProducto_Click"/>
 
 
     </Grid>

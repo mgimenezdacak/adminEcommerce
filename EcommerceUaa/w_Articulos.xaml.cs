@@ -250,5 +250,11 @@ namespace EcommerceUaa
                 imageModified = true;
             }
         }
+
+        private void BtnTipoProducto_Click(object sender, RoutedEventArgs e)
+        {
+            w_TipoProducto frm = new w_TipoProducto();
+            frm.ShowDialog();
+        }
     }
 }

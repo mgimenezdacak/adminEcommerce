@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\obj\Debug\
+C:\Users\m.gimenez\Source\Repos\adminEcommerce\EcommerceUaa\obj\Debug\
 EcommerceUaa
 none
 false
 DEBUG;TRACE
-C:\Users\Aspire 5\Documents\GitHub\adminEcommerce\EcommerceUaa\App.xaml
-7-323221353
-5-691926231
-351629200733
-1481263022002
-menu.xaml;w_About.xaml;w_Articulos.xaml;w_Cliente.xaml;w_Login.xaml;w_Pedido.xaml;w_TipoProducto.xaml;
+C:\Users\m.gimenez\Source\Repos\adminEcommerce\EcommerceUaa\App.xaml
+876533118
+5-910695008
+39-63577984
+148528317355
+menu.xaml;w_About.xaml;w_Articulos.xaml;w_Cliente.xaml;w_Login.xaml;w_Pedido.xaml;w_TipoCliente.xaml;w_TipoProducto.xaml;
 
-False
+True
 
