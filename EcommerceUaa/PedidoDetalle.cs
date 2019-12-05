@@ -23,6 +23,5 @@ namespace EcommerceUaa
     
         public virtual Pedido Pedido { get; set; }
         public virtual Producto Producto { get; set; }
-        public virtual Pedido Pedido1 { get; set; }
     }
 }

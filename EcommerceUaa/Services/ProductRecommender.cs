@@ -1,4 +1,5 @@
-﻿using EcommerceUaa.Services;
+﻿using EcommerceUaa;
+using EcommerceUaa.Services;
 using Microsoft.ML;
 using Microsoft.ML.Trainers;
 using ProductRecommender.DataModel;
@@ -13,7 +14,7 @@ namespace UAAEcommerce.Services
 {
     public class Recommender
     {
-        EcommerceUaa.UAAEcommerce db = new EcommerceUaa.UAAEcommerce();
+        DataContext db = new DataContext();
         BlobStorageService blobStorage = new BlobStorageService();
 
         public Recommender()

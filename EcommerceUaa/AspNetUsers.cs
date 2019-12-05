@@ -21,7 +21,6 @@ namespace EcommerceUaa
             this.AspNetUserLogins = new HashSet<AspNetUserLogins>();
             this.Cliente = new HashSet<Cliente>();
             this.AspNetRoles = new HashSet<AspNetRoles>();
-            this.Cliente = new HashSet<Cliente>();
         }
     
         public string Id { get; set; }
@@ -45,7 +44,5 @@ namespace EcommerceUaa
         public virtual ICollection<Cliente> Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente> Cliente { get; set; }
     }
 }

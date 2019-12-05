@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UAAEcommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="UAAEcommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -110,7 +110,7 @@
           <Key>
             <PropertyRef Name="idPedido" />
           </Key>
-          <Property Name="idPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPedido" Type="int" Nullable="false" />
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="ped_fecha" Type="datetime" Nullable="false" />
           <Property Name="ped_descuento" Type="float" Nullable="false" />
@@ -119,8 +119,6 @@
         <EntityType Name="PedidoDetalle">
           <Key>
             <PropertyRef Name="idPedidoDetalle" />
-            <PropertyRef Name="idProducto" />
-            <PropertyRef Name="idPedidoCabecera" />
           </Key>
           <Property Name="idPedidoDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idProducto" Type="int" Nullable="false" />
@@ -282,7 +280,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PedidoDetalle_Pedido">
+        <Association Name="FK_PedidoDetalle_Pedido1">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
           <End Role="PedidoDetalle" Type="Self.PedidoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -371,7 +369,7 @@
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="Self.FK_PedidoDetalle_Pedido">
+          <AssociationSet Name="FK_PedidoDetalle_Pedido1" Association="Self.FK_PedidoDetalle_Pedido1">
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
           </AssociationSet>
@@ -384,8 +382,7 @@
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UAAEcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -448,7 +445,6 @@
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Cliente_AspNetUsers" FromRole="AspNetUsers" ToRole="Cliente" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
-          <NavigationProperty Name="Cliente" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="AspNetUsers" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
@@ -475,8 +471,6 @@
           <NavigationProperty Name="Ciudad" Relationship="Self.FK_Cliente_Ciudad" FromRole="Cliente" ToRole="Ciudad" />
           <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
-          <Property Name="usuarioId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="AspNetUsers" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="Cliente" ToRole="AspNetUsers" />
         </EntityType>
         <EntityType Name="Entrega">
           <Key>
@@ -509,13 +503,11 @@
           <Property Name="ped_confirmado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Pedido_Cliente" FromRole="Pedido" ToRole="Cliente" />
           <NavigationProperty Name="Entrega" Relationship="Self.FK_Entrega_Pedido" FromRole="Pedido" ToRole="Entrega" />
-          <NavigationProperty Name="PedidoDetalle" Relationship="Self.FK_PedidoDetalle_Pedido" FromRole="Pedido" ToRole="PedidoDetalle" />
+          <NavigationProperty Name="PedidoDetalle" Relationship="Self.FK_PedidoDetalle_Pedido1" FromRole="Pedido" ToRole="PedidoDetalle" />
         </EntityType>
         <EntityType Name="PedidoDetalle">
           <Key>
             <PropertyRef Name="idPedidoDetalle" />
-            <PropertyRef Name="idProducto" />
-            <PropertyRef Name="idPedidoCabecera" />
           </Key>
           <Property Name="idPedidoDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idProducto" Type="Int32" Nullable="false" />
@@ -523,7 +515,7 @@
           <Property Name="pedet_precio" Type="Int32" Nullable="false" />
           <Property Name="pedet_montototal" Type="Int32" Nullable="false" />
           <Property Name="pedet_cantidad" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pedido" Relationship="Self.FK_PedidoDetalle_Pedido" FromRole="PedidoDetalle" ToRole="Pedido" />
+          <NavigationProperty Name="Pedido" Relationship="Self.FK_PedidoDetalle_Pedido1" FromRole="PedidoDetalle" ToRole="Pedido" />
           <NavigationProperty Name="Producto" Relationship="Self.FK_PedidoDetalle_Producto" FromRole="PedidoDetalle" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Producto">
@@ -655,7 +647,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PedidoDetalle_Pedido">
+        <Association Name="FK_PedidoDetalle_Pedido1">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
           <End Role="PedidoDetalle" Type="Self.PedidoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -739,7 +731,7 @@
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Entrega" EntitySet="Entrega" />
           </AssociationSet>
-          <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="Self.FK_PedidoDetalle_Pedido">
+          <AssociationSet Name="FK_PedidoDetalle_Pedido1" Association="Self.FK_PedidoDetalle_Pedido1">
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
           </AssociationSet>
@@ -828,7 +820,6 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="UAAEcommerceModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
                 <ScalarProperty Name="idClientes" ColumnName="idClientes" />
                 <ScalarProperty Name="idTipoCliente" ColumnName="idTipoCliente" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />

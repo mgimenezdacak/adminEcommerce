@@ -28,6 +28,5 @@ namespace EcommerceUaa
         public virtual Ciudad Ciudad { get; set; }
         public virtual TipoCliente TipoCliente { get; set; }
         public virtual Pedido Pedido { get; set; }
-        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }
