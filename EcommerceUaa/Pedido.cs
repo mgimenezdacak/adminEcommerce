@@ -18,6 +18,7 @@ namespace EcommerceUaa
         public Pedido()
         {
             this.Entrega = new HashSet<Entrega>();
+            this.PedidoDetalle1 = new HashSet<PedidoDetalle>();
         }
     
         public int idPedido { get; set; }
@@ -27,8 +28,10 @@ namespace EcommerceUaa
         public string ped_confirmado { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        public virtual IEnumerable<PedidoDetalle> PedidoDetalle { get; set; }
+        public virtual PedidoDetalle PedidoDetalle { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entrega> Entrega { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PedidoDetalle> PedidoDetalle1 { get; set; }
     }
 }

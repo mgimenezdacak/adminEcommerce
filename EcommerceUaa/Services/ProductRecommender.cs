@@ -24,7 +24,7 @@ namespace UAAEcommerce.Services
         public void TrainModel()
         {
             var data = new List<ProductInput>();
-            foreach (var order in db.Pedido.ToList())
+           /* foreach (var order in db.Pedido.ToList())
             {
                 var productIds = order.PedidoDetalle.Select(x => x.idProducto).ToList();
                 foreach (var productId in productIds)
@@ -32,7 +32,7 @@ namespace UAAEcommerce.Services
                     var coPurchasedIds = productIds.Except(new List<int> { productId }).ToList();
                     data.AddRange(coPurchasedIds.Select(coPurchasedId => new ProductInput { ProductId = (uint)productId, CoPurchasedProductId = (uint)coPurchasedId }));
                 }
-            }
+            }*/
 
             var mlContext = new MLContext();
 

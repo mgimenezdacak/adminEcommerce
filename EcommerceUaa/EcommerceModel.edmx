@@ -85,6 +85,7 @@
           <Property Name="cli_direccion" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="cli_email" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="cli_telefono" Type="varchar" MaxLength="15" />
+          <Property Name="usuarioId" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <EntityType Name="Entrega">
           <Key>
@@ -92,7 +93,7 @@
           </Key>
           <Property Name="id_entrega" Type="int" Nullable="false" />
           <Property Name="id_pedido" Type="int" Nullable="false" />
-          <Property Name="chofer" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="chofer" Type="varchar" MaxLength="100" />
           <Property Name="fecha" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="MensajesWeb">
@@ -124,7 +125,7 @@
           <Property Name="idPedidoCabecera" Type="int" Nullable="false" />
           <Property Name="pedet_precio" Type="int" Nullable="false" />
           <Property Name="pedet_montototal" Type="int" Nullable="false" />
-          <Property Name="pedet_cantidad" Type="int" />
+          <Property Name="pedet_cantidad" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -137,6 +138,7 @@
           <Property Name="pro_precio" Type="int" Nullable="false" />
           <Property Name="pro_blobname" Type="varchar" MaxLength="100" />
           <Property Name="pro_blobcontainername" Type="varchar" MaxLength="100" />
+          <Property Name="pro_descripcionlarga" Type="varchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="TipoCliente">
           <Key>
@@ -152,6 +154,18 @@
           <Property Name="idTipoProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipro_descripcion" Type="varchar" MaxLength="20" />
         </EntityType>
+        <Association Name="FK_Cliente_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Cliente_Ciudad">
           <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
@@ -232,6 +246,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Entrega_Pedido">
+          <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
+          <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="idPedido" />
+            </Principal>
+            <Dependent Role="Entrega">
+              <PropertyRef Name="id_pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Pedido_Cliente">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="0..1" />
@@ -244,15 +270,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PedidoDetalle_Cabecera">
+        <Association Name="FK_PedidoDetalle_Pedido">
           <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
-          <End Role="PedidoDetalle" Type="Self.PedidoDetalle" Multiplicity="0..1" />
+          <End Role="PedidoDetalle" Type="Self.PedidoDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pedido">
               <PropertyRef Name="idPedido" />
             </Principal>
             <Dependent Role="PedidoDetalle">
-              <PropertyRef Name="idPedidoDetalle" />
+              <PropertyRef Name="idPedidoCabecera" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -280,18 +306,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FKEntrega">
-          <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
-          <End Role="Entrega" Type="Self.Entrega" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pedido">
-              <PropertyRef Name="idPedido" />
-            </Principal>
-            <Dependent Role="Entrega">
-              <PropertyRef Name="id_pedido" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="UAAEcommerceModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
@@ -308,6 +322,10 @@
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoCliente" EntityType="Self.TipoCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoProducto" EntityType="Self.TipoProducto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cliente_AspNetUsers" Association="Self.FK_Cliente_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
           <AssociationSet Name="FK_Cliente_Ciudad" Association="Self.FK_Cliente_Ciudad">
             <End Role="Ciudad" EntitySet="Ciudad" />
             <End Role="Cliente" EntitySet="Cliente" />
@@ -332,11 +350,15 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_Entrega_Pedido" Association="Self.FK_Entrega_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Entrega" EntitySet="Entrega" />
+          </AssociationSet>
           <AssociationSet Name="FK_Pedido_Cliente" Association="Self.FK_Pedido_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK_PedidoDetalle_Cabecera" Association="Self.FK_PedidoDetalle_Cabecera">
+          <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="Self.FK_PedidoDetalle_Pedido">
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
           </AssociationSet>
@@ -347,10 +369,6 @@
           <AssociationSet Name="FK_Producto_TipoProducto" Association="Self.FK_Producto_TipoProducto">
             <End Role="TipoProducto" EntitySet="TipoProducto" />
             <End Role="Producto" EntitySet="Producto" />
-          </AssociationSet>
-          <AssociationSet Name="FKEntrega" Association="Self.FKEntrega">
-            <End Role="Pedido" EntitySet="Pedido" />
-            <End Role="Entrega" EntitySet="Entrega" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -415,6 +433,7 @@
           <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+          <NavigationProperty Name="Cliente" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="AspNetUsers" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
@@ -439,6 +458,8 @@
           <NavigationProperty Name="Ciudad" Relationship="Self.FK_Cliente_Ciudad" FromRole="Cliente" ToRole="Ciudad" />
           <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
+          <Property Name="usuarioId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="Cliente" ToRole="AspNetUsers" />
         </EntityType>
         <EntityType Name="MensajesWeb">
           <Key>
@@ -462,6 +483,7 @@
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Pedido_Cliente" FromRole="Pedido" ToRole="Cliente" />
           <NavigationProperty Name="PedidoDetalle" Relationship="Self.FK_PedidoDetalle_Cabecera" FromRole="Pedido" ToRole="PedidoDetalle" />
           <NavigationProperty Name="Entrega" Relationship="UAAEcommerceModel.FKEntrega" FromRole="Pedido" ToRole="Entrega" />
+          <NavigationProperty Name="PedidoDetalle1" Relationship="UAAEcommerceModel.FK_PedidoDetalle_Pedido" FromRole="Pedido" ToRole="PedidoDetalle" />
         </EntityType>
         <EntityType Name="PedidoDetalle">
           <Key>
@@ -474,7 +496,8 @@
           <Property Name="pedet_montototal" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK_PedidoDetalle_Cabecera" FromRole="PedidoDetalle" ToRole="Pedido" />
           <NavigationProperty Name="Producto" Relationship="Self.FK_PedidoDetalle_Producto" FromRole="PedidoDetalle" ToRole="Producto" />
-          <Property Name="pedet_cantidad" Type="Int32" />
+          <Property Name="pedet_cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedido1" Relationship="UAAEcommerceModel.FK_PedidoDetalle_Pedido" FromRole="PedidoDetalle" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -489,6 +512,7 @@
           <NavigationProperty Name="TipoProducto" Relationship="Self.FK_Producto_TipoProducto" FromRole="Producto" ToRole="TipoProducto" />
           <Property Name="pro_blobname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="pro_blobcontainername" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="pro_descripcionlarga" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TipoCliente">
           <Key>
@@ -665,6 +689,14 @@
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Entrega" EntitySet="Entrega" />
           </AssociationSet>
+          <AssociationSet Name="FK_Cliente_AspNetUsers" Association="UAAEcommerceModel.FK_Cliente_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="UAAEcommerceModel.FK_PedidoDetalle_Pedido">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Entrega">
           <Key>
@@ -672,7 +704,7 @@
           </Key>
           <Property Name="id_entrega" Type="Int32" Nullable="false" />
           <Property Name="id_pedido" Type="Int32" Nullable="false" />
-          <Property Name="chofer" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="chofer" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Pedido" Relationship="UAAEcommerceModel.FKEntrega" FromRole="Entrega" ToRole="Pedido" />
         </EntityType>
@@ -685,6 +717,30 @@
             </Principal>
             <Dependent Role="Entrega">
               <PropertyRef Name="id_pedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_AspNetUsers">
+          <End Type="UAAEcommerceModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="UAAEcommerceModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PedidoDetalle_Pedido">
+          <End Type="UAAEcommerceModel.Pedido" Role="Pedido" Multiplicity="1" />
+          <End Type="UAAEcommerceModel.PedidoDetalle" Role="PedidoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="idPedido" />
+            </Principal>
+            <Dependent Role="PedidoDetalle">
+              <PropertyRef Name="idPedidoCabecera" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -760,6 +816,7 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="UAAEcommerceModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
                 <ScalarProperty Name="idClientes" ColumnName="idClientes" />
                 <ScalarProperty Name="idTipoCliente" ColumnName="idTipoCliente" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
@@ -808,6 +865,7 @@
           <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="UAAEcommerceModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="pro_descripcionlarga" ColumnName="pro_descripcionlarga" />
                 <ScalarProperty Name="pro_blobcontainername" ColumnName="pro_blobcontainername" />
                 <ScalarProperty Name="pro_blobname" ColumnName="pro_blobname" />
                 <ScalarProperty Name="idProducto" ColumnName="idProducto" />

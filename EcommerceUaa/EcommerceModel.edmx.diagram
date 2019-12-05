@@ -29,6 +29,8 @@
         <AssociationConnector Association="UAAEcommerceModel.AspNetUserRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="UAAEcommerceModel.Entrega" Width="1.5" PointX="7.5" PointY="9.625" />
         <AssociationConnector Association="UAAEcommerceModel.FKEntrega" />
+        <AssociationConnector Association="UAAEcommerceModel.FK_Cliente_AspNetUsers" />
+        <AssociationConnector Association="UAAEcommerceModel.FK_PedidoDetalle_Pedido" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

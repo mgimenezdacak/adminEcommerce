@@ -22,9 +22,11 @@ namespace EcommerceUaa
         public string cli_direccion { get; set; }
         public string cli_email { get; set; }
         public string cli_telefono { get; set; }
+        public string usuarioId { get; set; }
     
         public virtual Ciudad Ciudad { get; set; }
         public virtual TipoCliente TipoCliente { get; set; }
         public virtual Pedido Pedido { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }

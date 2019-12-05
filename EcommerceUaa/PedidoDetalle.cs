@@ -19,9 +19,10 @@ namespace EcommerceUaa
         public int idPedidoCabecera { get; set; }
         public int pedet_precio { get; set; }
         public int pedet_montototal { get; set; }
-        public Nullable<int> pedet_cantidad { get; set; }
+        public int pedet_cantidad { get; set; }
     
         public virtual Pedido Pedido { get; set; }
         public virtual Producto Producto { get; set; }
+        public virtual Pedido Pedido1 { get; set; }
     }
 }

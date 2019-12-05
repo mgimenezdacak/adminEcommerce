@@ -28,7 +28,7 @@ namespace EcommerceUaa
 
         private async void BtnIngresar_Click(object sender, RoutedEventArgs e)
         {
-
+            /*
            if (txtMail.Text.Trim() != "" && txtClave.Password.ToString() != null)
            {
                 Usuario usuario = new Usuario();
@@ -37,12 +37,12 @@ namespace EcommerceUaa
                 try
                 {
                     if (await Usuario.VerificarLogin(usuario))
-                    {
+                    {*/
                         menu menu = new menu();
                         Hide();
                         menu.ShowDialog();
                         Close();
-                    }
+                    /*}
                     else
                     {
                         MessageBox.Show("Verifique el usuario y la contraseña", "Iniciar Sesion", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -56,7 +56,7 @@ namespace EcommerceUaa
                     MessageBox.Show("Error!\n" + ex.Message, "Iniciar Sesion", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
               
-           }
+           }*/
         
         }
 
