@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("matrixfactorizationnative.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ldanative.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cpumathnative.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ecommercemodel.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ecommercemodel.tt")]
 

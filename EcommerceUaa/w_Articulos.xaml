@@ -23,7 +23,7 @@
         <Button x:Name="btnCancelar" Content="Cancelar" Margin="310,554,141,0" VerticalAlignment="Top" Click="BtnCancelar_Click" Width="Auto"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="202,302,0,0" VerticalAlignment="Top" Width="100" Name="imgDynamic"/>
         <Button Content="Cambiar imagen" HorizontalAlignment="Left" Margin="206,402,0,0" VerticalAlignment="Top" Width="93" Name="btnLoadFromFile" Click="BtnLoadFromFile_Click"/>
-        <Button x:Name="btnGuardar" Content="Guardar" Margin="385,554,66,0" VerticalAlignment="Top" Click="BtnAgregar_Click" Width="Auto"/>
+        <Button x:Name="btnGuardar" Content="Guardar" Margin="385,554,66,0" VerticalAlignment="Top" Click="BtnGuardar_Click" Width="Auto"/>
 
 
     </Grid>
