@@ -14,7 +14,7 @@ namespace UAAEcommerce.Services
 {
     public class Recommender
     {
-        DataContext db = new DataContext();
+        DataContext db = new EcommerceUaa.DataContext();
         BlobStorageService blobStorage = new BlobStorageService();
 
         public Recommender()
@@ -22,7 +22,7 @@ namespace UAAEcommerce.Services
             
         }
 
-        public void TrainModel()
+        public async void TrainModel()
         {
             var data = new List<ProductInput>();
             foreach (var order in db.Pedido.ToList())
@@ -30,7 +30,7 @@ namespace UAAEcommerce.Services
                 var productIds = order.PedidoDetalle.Select(x => x.idProducto).ToList();
                 foreach (var productId in productIds)
                 {
-                    var coPurchasedIds = productIds.Except(new List<int> { productId }).ToList();
+                    var coPurchasedIds = productIds;
                     data.AddRange(coPurchasedIds.Select(coPurchasedId => new ProductInput { ProductId = (uint)productId, CoPurchasedProductId = (uint)coPurchasedId }));
                 }
             }
@@ -56,8 +56,7 @@ namespace UAAEcommerce.Services
             using (var ms = new MemoryStream())
             {
                 mlContext.Model.Save(model, trainData.Schema, ms);
-                var uploadTask = blobStorage.UploadStream(ms, "recommender-model.ml", "Models", "application/octet-stream");
-                Task.WaitAll(uploadTask);
+                await blobStorage.UploadStream(ms, "recommender-model.ml", "models", "application/octet-stream");
             }
         }
 

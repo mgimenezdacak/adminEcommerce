@@ -36,6 +36,8 @@ namespace EcommerceUaa
         {
             dgvOrdenes.ItemsSource = db.Entrega.ToList();
             dgvPedidos.ItemsSource = db.Pedido.ToList();
+            dgvOrdenes.Columns[4].Visibility = Visibility.Collapsed;
+            dgvPedidos.Columns[5].Visibility = Visibility.Collapsed;
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
@@ -72,6 +74,7 @@ namespace EcommerceUaa
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             recommender.TrainModel();
+            MessageBox.Show("IA entrenada con exito.");
         }
     }
 }
