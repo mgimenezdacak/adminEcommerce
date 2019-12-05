@@ -179,66 +179,69 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AspNetRoles.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUserClaims.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUserLogins.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUsers.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Ciudad.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Core\Constants.cs" />
     <Compile Include="Core\DataModel\ProductInput.cs" />
     <Compile Include="Core\DataModel\ProductScore.cs" />
     <Compile Include="C__MigrationHistory.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="EcommerceModel.Context.cs">
+    <Compile Include="DataContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EcommerceModel.Context.tt</DependentUpon>
+      <DependentUpon>DataContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EcommerceModel.cs">
+    <Compile Include="DataContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="EcommerceModel.Designer.cs">
+    <Compile Include="DataContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EcommerceModel.edmx</DependentUpon>
+      <DependentUpon>DataContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entrega.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="MensajesWeb.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="PedidoDetalle.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\BlobStorageService.cs" />
     <Compile Include="Services\ProductRecommender.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoCliente.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoProducto.cs">
-      <DependentUpon>EcommerceModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
     <Compile Include="w_About.xaml.cs">
@@ -284,12 +287,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="EcommerceModel.edmx">
+    <EntityDeploy Include="DataContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EcommerceModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EcommerceModel.edmx.diagram">
-      <DependentUpon>EcommerceModel.edmx</DependentUpon>
+    <None Include="DataContext.edmx.diagram">
+      <DependentUpon>DataContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -335,18 +338,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EcommerceModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EcommerceModel.Context.cs</LastGenOutput>
-      <DependentUpon>EcommerceModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="EcommerceModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EcommerceModel.edmx</DependentUpon>
-      <LastGenOutput>EcommerceModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +351,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataContext.edmx</DependentUpon>
+      <LastGenOutput>DataContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataContext.edmx</DependentUpon>
+      <LastGenOutput>DataContext.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -12,16 +12,12 @@ namespace EcommerceUaa
     using System;
     using System.Collections.Generic;
     
-    public partial class PedidoDetalle
+    public partial class sysdiagrams
     {
-        public int idPedidoDetalle { get; set; }
-        public int idProducto { get; set; }
-        public int idPedidoCabecera { get; set; }
-        public int pedet_precio { get; set; }
-        public int pedet_montototal { get; set; }
-        public int pedet_cantidad { get; set; }
-    
-        public virtual Pedido Pedido { get; set; }
-        public virtual Producto Producto { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
