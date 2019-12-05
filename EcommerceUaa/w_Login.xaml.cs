@@ -28,7 +28,7 @@ namespace EcommerceUaa
 
         private async void BtnIngresar_Click(object sender, RoutedEventArgs e)
         {
-
+            
            if (txtMail.Text.Trim() != "" && txtClave.Password.ToString() != null)
            {
                 Usuario usuario = new Usuario();

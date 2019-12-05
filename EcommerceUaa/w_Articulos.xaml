@@ -5,26 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EcommerceUaa"
         mc:Ignorable="d"
-        Title="Articulos" Height="632.357" Width="522.549" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+        Title="Articulos" Height="680.302" Width="522.549" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
     <Grid Loaded="Grid_Loaded">
         <Label Content="Articulos" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.469" Width="103" FontSize="18" FontWeight="Bold"/>
-        <ComboBox x:Name="chbTipoProducto" HorizontalAlignment="Left" Margin="177,492,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="chbTipoProducto" HorizontalAlignment="Left" Margin="177,540,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Cod. Barra:" HorizontalAlignment="Left" Margin="56,427,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCodBarra" HorizontalAlignment="Left" Height="23" Margin="128,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="TxtCodBarra_PreviewTextInput" MaxLength="20"/>
         <Label Content="Descripción:" HorizontalAlignment="Left" Margin="56,460,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" Margin="130,459,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" MaxLength="30"/>
-        <Label Content="Tipo de Producto:" HorizontalAlignment="Left" Margin="56,494,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo de Producto:" HorizontalAlignment="Left" Margin="56,542,0,0" VerticalAlignment="Top"/>
         <Label Content="Precio:" HorizontalAlignment="Left" Margin="275,427,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="325,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" PreviewTextInput="TxtPrecio_PreviewTextInput" MaxLength="20"/>
         <DataGrid HorizontalAlignment="Left" Name="dgvProductos" Height="191" Margin="29,49,0,0" VerticalAlignment="Top" Width="422" SelectionChanged="DgvProductos_SelectionChanged" IsReadOnly="True"/>
         <Button x:Name="btnAgregar" Content="Agregar" Margin="83,264,292,0" VerticalAlignment="Top" Click="BtnAgregar_Click" />
         <Button x:Name="btnModificar" Content="Modificar" Margin="178,264,197,0" VerticalAlignment="Top" Click="BtnModificar_Click" />
         <Button x:Name="btnEliminar" Content="Eliminar" Margin="273,264,102,0" VerticalAlignment="Top" Click="BtnEliminar_Click" />
-        <Button x:Name="btnCancelar" Content="Cancelar" Margin="310,554,141,0" VerticalAlignment="Top" Click="BtnCancelar_Click" Width="Auto"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" Margin="310,602,141,0" VerticalAlignment="Top" Click="BtnCancelar_Click" Width="Auto"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="202,302,0,0" VerticalAlignment="Top" Width="100" Name="imgDynamic"/>
         <Button Content="Cambiar imagen" HorizontalAlignment="Left" Margin="206,402,0,0" VerticalAlignment="Top" Width="93" Name="btnLoadFromFile" Click="BtnLoadFromFile_Click"/>
-        <Button x:Name="btnGuardar" Content="Guardar" Margin="385,554,66,0" VerticalAlignment="Top" Click="BtnGuardar_Click" Width="Auto"/>
-        <Button x:Name="btnTipoProducto" Content=".." HorizontalAlignment="Left" Margin="300,502,0,0" VerticalAlignment="Top" Width="20" Height="18" Click="BtnTipoProducto_Click"/>
+        <Button x:Name="btnGuardar" Content="Guardar" Margin="385,602,66,0" VerticalAlignment="Top" Click="BtnGuardar_Click" Width="Auto"/>
+        <Button x:Name="btnTipoProducto" Content=".." HorizontalAlignment="Left" Margin="300,550,0,0" VerticalAlignment="Top" Width="20" Height="18" Click="BtnTipoProducto_Click"/>
+        <Label Content="Detalle:" HorizontalAlignment="Left" Margin="56,492,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDescripcionLarga" HorizontalAlignment="Left" Height="23" Margin="130,491,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" />
 
 
     </Grid>

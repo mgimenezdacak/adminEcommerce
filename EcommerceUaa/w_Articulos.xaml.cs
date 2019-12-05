@@ -60,6 +60,7 @@ namespace EcommerceUaa
             btnAgregar.IsEnabled = true;
             btnEliminar.IsEnabled = true;
             btnModificar.IsEnabled = true;
+            txtDescripcionLarga.IsEnabled = false;
 
         }
 
@@ -73,12 +74,14 @@ namespace EcommerceUaa
             btnAgregar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnModificar.IsEnabled = false;
+            txtDescripcionLarga.IsEnabled = true;
         }
 
         private void LimpiarFormulario()
         {
             txtCodBarra.Text = null;
             txtDescripcion.Text = null;
+            txtDescripcionLarga.Text = null;
             txtPrecio.Text = null;
             chbTipoProducto.SelectedItem = null;
 
@@ -99,12 +102,14 @@ namespace EcommerceUaa
             dgvProductos.Columns[2].Header = "Descripcion";
             dgvProductos.Columns[3].Header = "Codigo de barra";
             dgvProductos.Columns[4].Header = "Precio";
+            dgvProductos.Columns[7].Header = "Detalle";
 
             dgvProductos.Columns[5].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[6].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[1].Visibility = Visibility.Collapsed;
-            dgvProductos.Columns[7].Visibility = Visibility.Collapsed;
+            //dgvProductos.Columns[7].Visibility = Visibility.Collapsed;
             dgvProductos.Columns[8].Visibility = Visibility.Collapsed;
+            dgvProductos.Columns[9].Visibility = Visibility.Collapsed;
             
 
         }
@@ -126,6 +131,7 @@ namespace EcommerceUaa
                 pro.pro_descripcion = txtDescripcion.Text;
                 pro.pro_precio = Convert.ToInt32(txtPrecio.Text);
                 pro.pro_codigobarra = txtCodBarra.Text;
+                pro.pro_descripcionlarga = txtDescripcionLarga.Text;
                 string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
                 pro.pro_blobname = imageName;
                 pro.pro_blobcontainername = nameof(Constants.BlobContainer.Photos).ToLower();
@@ -152,6 +158,7 @@ namespace EcommerceUaa
                 pro.pro_descripcion = txtDescripcion.Text;
                 pro.pro_precio = Convert.ToInt32(txtPrecio.Text);
                 pro.pro_codigobarra = txtCodBarra.Text;
+                pro.pro_descripcionlarga = txtDescripcionLarga.Text;
                 if (imageModified)
                 {
                     string imageName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(filePath);
@@ -194,6 +201,7 @@ namespace EcommerceUaa
                     txtCodBarra.Text = producto.pro_codigobarra;
                     txtDescripcion.Text = producto.pro_descripcion;
                     txtPrecio.Text = producto.pro_precio.ToString();
+                    txtDescripcionLarga.Text = producto.pro_descripcionlarga;
                     chbTipoProducto.SelectedItem = producto.TipoProducto;
                     Uri fileUri = new Uri(blobStorage.GetBlobUrl(producto.pro_blobname, producto.pro_blobcontainername));
                     imgDynamic.Source = new BitmapImage(fileUri);

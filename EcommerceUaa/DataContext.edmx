@@ -448,6 +448,7 @@
           <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Cliente_AspNetUsers" FromRole="AspNetUsers" ToRole="Cliente" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+          <NavigationProperty Name="Cliente" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="AspNetUsers" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
@@ -474,6 +475,8 @@
           <NavigationProperty Name="Ciudad" Relationship="Self.FK_Cliente_Ciudad" FromRole="Cliente" ToRole="Ciudad" />
           <NavigationProperty Name="TipoCliente" Relationship="Self.FK_Cliente_TipoCliente" FromRole="Cliente" ToRole="TipoCliente" />
           <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Cliente" FromRole="Cliente" ToRole="Pedido" />
+          <Property Name="usuarioId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="UAAEcommerceModel.FK_Cliente_AspNetUsers" FromRole="Cliente" ToRole="AspNetUsers" />
         </EntityType>
         <EntityType Name="Entrega">
           <Key>
@@ -825,6 +828,7 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="UAAEcommerceModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
                 <ScalarProperty Name="idClientes" ColumnName="idClientes" />
                 <ScalarProperty Name="idTipoCliente" ColumnName="idTipoCliente" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />

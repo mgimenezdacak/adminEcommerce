@@ -144,6 +144,14 @@ namespace EcommerceUaa {
         #line default
         #line hidden
         
+        
+        #line 29 "..\..\w_Articulos.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtDescripcionLarga;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -280,6 +288,9 @@ namespace EcommerceUaa {
             
             #line default
             #line hidden
+            return;
+            case 15:
+            this.txtDescripcionLarga = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
