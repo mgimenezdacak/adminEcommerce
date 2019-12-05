@@ -22,7 +22,7 @@ namespace EcommerceUaa
     /// </summary>
     public partial class w_Articulos : Window
     {
-        UAAEcommerce db = new UAAEcommerce();
+        DataContext db = new DataContext();
         BlobStorageService blobStorage = new BlobStorageService();
         string modo = null;
         string filePath;

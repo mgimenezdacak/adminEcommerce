@@ -19,7 +19,7 @@ namespace EcommerceUaa
     /// </summary>
     public partial class w_TipoCliente : Window
     {
-        UAAEcommerce db = new UAAEcommerce();
+        DataContext db = new DataContext();
         string modo = null;
         public w_TipoCliente()
         {

@@ -19,13 +19,13 @@ namespace EcommerceUaa
     /// </summary>
     public partial class w_Cliente : Window
     {
-        UAAEcommerce datos;
+        DataContext datos;
         string modo = null;
 
         public w_Cliente()
         {
             InitializeComponent();
-            datos = new UAAEcommerce();
+            datos = new DataContext();
         }
 
         private void CargarDatosGrilla()

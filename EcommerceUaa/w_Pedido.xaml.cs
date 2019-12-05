@@ -20,7 +20,7 @@ namespace EcommerceUaa
     /// </summary>
     public partial class w_Pedido : Window
     {
-        UAAEcommerce db = new UAAEcommerce();
+        DataContext db = new DataContext();
         Pedido pedidoAEntregar = new Pedido();
         Recommender recommender = new Recommender();
         public w_Pedido()

@@ -19,7 +19,7 @@ namespace EcommerceUaa
     /// </summary>
     public partial class w_TipoProducto : Window
     {
-        UAAEcommerce db = new UAAEcommerce();
+        DataContext db = new DataContext();
         string modo;
         int idToEdit;
         public w_TipoProducto()
