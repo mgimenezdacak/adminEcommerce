@@ -47,7 +47,8 @@ namespace EcommerceUaa
                 var entrega = new Entrega(){
                     id_pedido = pedidoAEntregar.idPedido,
                     chofer = txtChofer.Text,
-                    fecha = Convert.ToDateTime(dtpFecha.Text)
+                    fecha = Convert.ToDateTime(dtpFecha.Text),
+                    id_entrega = db.Entrega.Count() + 1
                 };
                 db.Entrega.Add(entrega);
                 db.SaveChanges();

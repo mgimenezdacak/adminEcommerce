@@ -77,8 +77,8 @@ namespace EcommerceUaa
             cmbTipoCliente.SelectedValuePath = "idTipoCliente";
 
             cmbUsuario.ItemsSource = datos.AspNetUsers.ToList();
-            cmbUsuario.DisplayMemberPath = "Email";
-            cmbUsuario.SelectedValuePath = "PasswordHash";
+            cmbUsuario.DisplayMemberPath = "UserName";
+            cmbUsuario.SelectedValuePath = "Id";
         }
 
         private void BloquearFormulario()

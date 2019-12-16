@@ -18,7 +18,7 @@ namespace EcommerceUaa
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://localhost:44375/");
+                client.BaseAddress = new Uri("https://uaaecommerce20191205082947.azurewebsites.net/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
