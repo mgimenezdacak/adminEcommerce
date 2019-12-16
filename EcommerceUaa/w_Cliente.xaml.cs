@@ -75,6 +75,10 @@ namespace EcommerceUaa
             cmbTipoCliente.ItemsSource = datos.TipoCliente.ToList();
             cmbTipoCliente.DisplayMemberPath = "tipcli_descripcion";
             cmbTipoCliente.SelectedValuePath = "idTipoCliente";
+
+            cmbUsuario.ItemsSource = datos.AspNetUsers.ToList();
+            cmbUsuario.DisplayMemberPath = "Email";
+            cmbUsuario.SelectedValuePath = "PasswordHash";
         }
 
         private void BloquearFormulario()
@@ -85,6 +89,7 @@ namespace EcommerceUaa
             txtTelefono.IsEnabled = false;
             txtMail.IsEnabled = false;
             cmbCiudad.IsEnabled = false;
+            cmbUsuario.IsEnabled = false;
             cmbTipoCliente.IsEnabled = false;
             btnGuardar.IsEnabled = false;
             btnAgregar.IsEnabled = true;
@@ -101,6 +106,7 @@ namespace EcommerceUaa
             txtTelefono.IsEnabled = true;
             txtMail.IsEnabled = true;
             cmbCiudad.IsEnabled = true;
+            cmbUsuario.IsEnabled = true;
             cmbTipoCliente.IsEnabled = true;
             btnGuardar.IsEnabled = true;
             btnAgregar.IsEnabled = false;
@@ -147,6 +153,7 @@ namespace EcommerceUaa
                     Cliente cli = new Cliente();
                     cli.idCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
                     cli.idTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
+                    cli.usuarioId = Convert.ToString(cmbUsuario.SelectedValue);
                     cli.cli_razonsocial = txtRazonSocial.Text;
                     cli.cli_ruc = txtRuc.Text;
                     cli.cli_direccion = txtDireccion.Text;
@@ -164,6 +171,7 @@ namespace EcommerceUaa
                     Cliente cli = (Cliente)dgvClientes.SelectedItem;
                     cli.idCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
                     cli.idTipoCliente = Convert.ToInt32(cmbTipoCliente.SelectedValue);
+                    cli.usuarioId = Convert.ToString(cmbUsuario.SelectedValue);
                     cli.cli_razonsocial = txtRazonSocial.Text;
                     cli.cli_ruc = txtRuc.Text;
                     cli.cli_direccion = txtDireccion.Text;
@@ -197,8 +205,9 @@ namespace EcommerceUaa
                 txtMail.Text = cliente.cli_email;
                 cmbCiudad.SelectedItem = cliente.Ciudad;
                 cmbTipoCliente.SelectedItem = cliente.TipoCliente;
-
+                cmbUsuario.SelectedItem = cliente.usuarioId;
                 
+
             }
         }
 
